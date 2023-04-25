@@ -60,17 +60,11 @@ const itemPriority = {
   z: 26,
 };
 
-const stuff = data.map((compartment) => {
-  const toSplitAt = compartment.length / 2;
-  const comp1 = new Set(compartment.slice(0, toSplitAt));
-  const comp2 = new Set(compartment.slice(toSplitAt));
-  let intersect = new Set([...comp1].filter((i) => comp2.has(i)));
-  return Array.from(intersect);
-});
-console.log(
-  stuff
-    .map((stuff) => {
-      return (stuff[0] = itemPriority[stuff[0]]);
-    })
-    .reduce((a, b) => a + b)
-);
+const bagScore = (allbags) => {
+  for (let i = 0; i < allbags.length; i++) {
+    const firstElf = new Set(allbags[i]);
+    const secondElf = new Set(allbags[i + 1]);
+    const thirdElf = new Set(allbags[i + 2]);
+  }
+};
+console.log(bagScore(data));
